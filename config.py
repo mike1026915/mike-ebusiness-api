@@ -4,11 +4,11 @@ import os
 
 pjdir = os.path.abspath(os.path.dirname(__file__))
 POSTGRES = {
-    'user': '',
-    'password': '',
-    'db': '',
-    'host': '',
-    'port': '',
+    'user': 'aehzefdybddfcl',
+    'password': '2ce386813249e02b9049ed23201cf2a6a5c5f9710b8f34cb73d74240fe9ca2fc',
+    'db': 'ddmsht4bl80g3n',
+    'host': 'ec2-107-21-201-238.compute-1.amazonaws.com',
+    'port': 5432,
 }
 
 class Config(object):
