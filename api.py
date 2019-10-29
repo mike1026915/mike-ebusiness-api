@@ -30,7 +30,7 @@ class ProductEndpoint(Resource):
         if not pid:
             products = Product.query.all()
         else:
-            products = Product.query.filter_by(good_id=pid)
+            products = Product.query.filter_by(id=pid)
 
         products = [p.data for p in products]
         print(products)
