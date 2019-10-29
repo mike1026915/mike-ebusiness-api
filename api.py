@@ -60,6 +60,10 @@ class OrderEndpoint(Resource):
 
 with app.app_context():
     try:
+        db.drop_all()
+    except: 
+        pass
+    try:
         db.create_all()
     except Exception as e:
         print(e)
