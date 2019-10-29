@@ -12,7 +12,7 @@ from config import config
 
 app = Flask(__name__, static_url_path='/static')
 CORS(app)
-app.config.from_object(config['production'])
+app.config.from_object(config['default'])
 app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 db_init(app)
 api = Api(app)
