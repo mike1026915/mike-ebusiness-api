@@ -61,8 +61,8 @@ class OrderEndpoint(Resource):
 with app.app_context():
     try:
         db.drop_all()
-    except: 
-        pass
+    except Exception as e: 
+        print(e)
     try:
         db.create_all()
     except Exception as e:
@@ -77,7 +77,7 @@ with app.app_context():
             p1.save_to_db()
             p2.save_to_db()
         except Exception as e:
-            pass
+            print(e)
 
 #print(Product.query.all())
 
