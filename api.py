@@ -59,25 +59,16 @@ class OrderEndpoint(Resource):
             return order.id
 
 with app.app_context():
-    try:
-        db.drop_all()
-    except Exception as e: 
-        print(e)
-    try:
-        db.create_all()
-    except Exception as e:
-        print(e)
+    db.drop_all()
+    db.create_all()
 
     products = Product.query.all()
     if len(products) == 0:
-        try:
-            img_url = 'https://cf-assets2.tenlong.com.tw/products/images/000/130/414/original/9789864776283.jpg?1551941737'
-            p1 = Product(u'萌貓投資偵探所', 100, 264, u'商周出版', u'繁體中文', img_url, '9789864776283')
-            p2 = Product(u'萌貓投資偵探所2', 100, 264, u'商周出版', u'繁體中文', img_url, '9789864776283')
-            p1.save_to_db()
-            p2.save_to_db()
-        except Exception as e:
-            print(e)
+        img_url = 'https://cf-assets2.tenlong.com.tw/products/images/000/130/414/original/9789864776283.jpg?1551941737'
+        p1 = Product(u'萌貓投資偵探所', 100, 264, u'商周出版', u'繁體中文', img_url, '9789864776283')
+        p2 = Product(u'萌貓投資偵探所2', 100, 264, u'商周出版', u'繁體中文', img_url, '9789864776283')
+        p1.save_to_db()
+        p2.save_to_db()
 
 #print(Product.query.all())
 
